@@ -1,17 +1,8 @@
 # Libserial 
 
-A static library to read from serial port
+A static library to read from serial port.  No dependencies. ~140kB size.
 
-------
-
-
-
-##### To Install
-
-```
-sudo apt update
-sudo apt install autogen autoconf build-essential cmake graphviz libboost-dev libgtest-dev libtool python-sip-dev doxygen
-```
+Extracted from Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) 
 
 ------
 
@@ -72,3 +63,4 @@ my_serial_stream.write( output_buffer, BUFFER_SIZE );
 // Close
 my_serial_stream.Close();
 ```
+
