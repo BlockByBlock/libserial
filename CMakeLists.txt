@@ -17,6 +17,9 @@ add_library(libserial
     src/SerialStreamBuf.cpp
 )
 
+# For use inside build tree
+add_library(LibSerial::libserial ALIAS libserial)
+
 target_include_directories(libserial
     PUBLIC
         $<INSTALL_INTERFACE:include>
@@ -52,11 +55,25 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 install(EXPORT libserial-targets
   FILE
-    LibSerial.cmake
+    LibSerialTargets.cmake
   NAMESPACE
     LibSerial::
   DESTINATION
     ${INSTALL_CONFIGDIR}
+)
+
+# Create LibSerialConfig.cmake file
+include(CMakePackageConfigHelpers)
+
+configure_package_config_file(${CMAKE_CURRENT_LIST_DIR}/cmake/LibSerialConfig.cmake.in
+  ${CMAKE_CURRENT_BINARY_DIR}/LibSerialConfig.cmake
+  INSTALL_DESTINATION ${INSTALL_CONFIGDIR}
+)
+
+# Install the Config.cmake file
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/LibSerialConfig.cmake
+  DESTINATION ${INSTALL_CONFIGDIR}
 )
 
 # Exporting from the build tree

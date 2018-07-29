@@ -1,0 +1,13 @@
+@PACKAGE_INIT@ 
+
+get_filename_component(LibSerial_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+
+list(APPEND CMAKE_MODULE_PATH ${LibSerial_CMAKE_DIR})
+
+if(NOT TARGET LibSerial::LibSerial)
+    include("${LibSerial_CMAKE_DIR}/LibSerialTargets.cmake")
+endif()
+
+set(LibSerial_LIBRARIES LibSerial::LibSerial)
+
+
