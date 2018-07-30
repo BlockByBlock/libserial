@@ -1,8 +1,22 @@
-# Libserial 
+# Libserial by Crayzeewulf 
 
-A static library to read from serial port.  No dependencies. ~140kB size.
+Library to read from serial port.  No dependencies. ~140kB size.
 
-Extracted from Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) 
+Credit to Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) 
+
+------
+
+##### To Install
+
+```
+# In libserial directory
+
+$ mkdir build && cd build
+$ cmake ..
+$ sudo make install
+```
+
+This will install the library and include to the /usr/local/lib and /usr/local/include directory
 
 ------
 
@@ -11,9 +25,15 @@ Extracted from Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libseria
 ##### To Use with CMakeLists
 
 ```
+find_package(LibSerial REQUIRED)
+
+# Only when required
 add_subdirectory(libserial)
-target_link_libraries(main libserial)
+
+target_link_libraries(main LibSerial::LibSerial)
 ```
+
+Include the following lines into the project's CMakeLists to link the serial library
 
 ------
 
