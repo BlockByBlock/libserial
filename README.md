@@ -1,8 +1,16 @@
-# Libserial by Crayzeewulf 
+# Libserial - *Adapted* 
 
 Library to read from serial port.  No dependencies. ~140kB size.
 
-Credit to Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) 
+Credit to Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) - GNU LGPLv2
+
+**Changes** to Crayzeewulf's [Libserial](https://github.com/crayzeewulf/libserial) :
+
+- Use Libserial's SerialStream.cpp
+- Use Libserial's SerialStreamBuf.cpp
+- Use Libserial's SerialPortConstants.h
+- Use Libserial's SerialStream.h
+- Use Libserial's SerialStreamBuf.h
 
 ------
 
